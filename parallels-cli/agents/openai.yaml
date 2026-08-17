@@ -1,0 +1,4 @@
+interface:
+  display_name: "Parallels CLI"
+  short_description: "Automate Parallels Desktop and virtual machines"
+  default_prompt: "Use $parallels-cli to inspect or automate Parallels Desktop and its Linux or Windows virtual machines safely."

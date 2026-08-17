@@ -1,0 +1,76 @@
+#!/bin/sh
+
+set -eu
+
+usage() {
+  printf '%s\n' "Usage: parallels-doctor [--vm <name-or-uuid>]"
+  printf '%s\n' "Print a read-only Parallels Desktop, network, and VM inventory."
+}
+
+vm_target=''
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --vm)
+      if [ "$#" -lt 2 ]; then
+        printf '%s\n' "error: --vm requires a name or UUID" >&2
+        exit 2
+      fi
+      vm_target=$2
+      shift 2
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      printf '%s\n' "error: unknown argument: $1" >&2
+      usage >&2
+      exit 2
+      ;;
+  esac
+done
+
+if [ "$(uname -s)" != 'Darwin' ]; then
+  printf '%s\n' "error: Parallels Desktop CLI automation must run on its macOS host" >&2
+  exit 1
+fi
+
+for required_command in prlctl prlsrvctl; do
+  if ! command -v "$required_command" >/dev/null 2>&1; then
+    printf '%s\n' "error: $required_command is not available in PATH" >&2
+    exit 1
+  fi
+done
+
+printf '%s\n' "Host"
+printf '  OS: '
+sw_vers -productName
+printf '  Version: '
+sw_vers -productVersion
+printf '  Architecture: %s\n' "$(uname -m)"
+
+printf '%s\n' "Parallels CLI"
+prlctl --version
+prlsrvctl --help 2>&1 | sed -n '1p'
+
+printf '%s\n' "Virtual machines"
+if ! prlctl list --all --json; then
+  prlctl list --all
+fi
+
+printf '%s\n' "Virtual networks"
+if ! prlsrvctl net list --json; then
+  prlsrvctl net list
+fi
+
+if [ -n "$vm_target" ]; then
+  printf '%s\n' "Selected VM status"
+  prlctl status "$vm_target"
+  printf '%s\n' "Selected VM information"
+  prlctl list --info "$vm_target"
+  printf '%s\n' "Selected VM snapshots"
+  if ! prlctl snapshot-list "$vm_target" --json; then
+    prlctl snapshot-list "$vm_target"
+  fi
+fi
