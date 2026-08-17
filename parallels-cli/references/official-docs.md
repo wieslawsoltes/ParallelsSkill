@@ -15,6 +15,7 @@ Use the installed command help as the exact syntax reference for that host. Use 
 - [Revert to a snapshot](https://docs.parallels.com/landing/parallels-desktop-developers-guide/command-line-interface-utility/manage-virtual-machines-from-cli/snapshot-management/reverting-to-a-snapshot)
 - [Capture a screen area](https://docs.parallels.com/landing/parallels-desktop-developers-guide/command-line-interface-utility/manage-virtual-machines-from-cli/general-virtual-machine-management/capture-a-screen-area)
 - [Common virtual-device options](https://docs.parallels.com/landing/parallels-desktop-developers-guide/command-line-interface-utility/manage-virtual-machines-from-cli/virtual-machine-configuration-tasks/device-management/common-options)
+- [Persist 200% GNOME scaling in a Linux Arm VM](https://kb.parallels.com/129534)
 
 ## Current User-Guide Context
 
@@ -23,6 +24,7 @@ Use the installed command help as the exact syntax reference for that host. Use 
 - [Launch Windows](https://docs.parallels.com/landing/pdfm-ug/parallels-desktop-for-mac-26-users-guide/use-windows-on-your-mac/getting-started/launching-windows)
 - [Windows startup and shutdown settings](https://docs.parallels.com/landing/pdfm-ug/parallels-desktop-for-mac-26-users-guide/use-windows-on-your-mac/getting-started/shutdown-and-suspend-windows/startup-and-shutdown-settings)
 - [Connect external devices](https://docs.parallels.com/landing/pdfm-ug/parallels-desktop-for-mac-26-users-guide/use-windows-on-your-mac/connecting-external-devices)
+- [Graphics settings and Retina modes](https://docs.parallels.com/landing/pdfm-ug/parallels-desktop-for-mac-26-users-guide/parallels-desktop-preferences-and-virtual-machine-settings/virtual-machine-settings/hardware-settings/graphics-settings)
 
 ## Version Discipline
 

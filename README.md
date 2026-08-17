@@ -11,6 +11,7 @@ A portable Codex skill for automating Parallels Desktop for Mac through its offi
 - Configure CPU, memory, startup behavior, disks, network adapters, USB devices, and shared folders.
 - Execute commands inside Linux and Windows guests through Parallels Tools.
 - Capture screenshots and send keyboard events for installer, recovery, and GUI automation.
+- Configure sharp GNOME Retina/HiDPI output with Parallels high-resolution video and integer scaling.
 - Manage snapshots, full or linked clones, archives, backups, virtual networks, and host-wide preferences.
 - Diagnose Parallels installations with a reusable read-only helper.
 - Apply explicit safety checks around deletion, forced shutdown, storage, encryption, licensing, and network changes.
@@ -57,6 +58,8 @@ $parallels-cli Create a named snapshot before changing the VM's CPU and memory a
 
 $parallels-cli Capture the current VM display and diagnose why the installer is blocked.
 
+$parallels-cli Make GNOME text sharp at macOS-like Retina density without fractional scaling.
+
 $parallels-cli Inspect shared and host-only networks without changing them.
 ```
 
@@ -89,6 +92,7 @@ parallels-cli/
     ├── host-networking.md
     ├── inventory-lifecycle.md
     ├── linux-examples.md
+    ├── linux-retina-scaling.md
     ├── official-docs.md
     ├── safety.md
     ├── snapshots-clones-backups.md

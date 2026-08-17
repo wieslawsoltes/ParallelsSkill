@@ -1,6 +1,6 @@
 ---
 name: parallels-cli
-description: Automate Parallels Desktop for Mac and its Linux or Windows virtual machines with prlctl and prlsrvctl. Use for VM discovery, lifecycle and configuration, guest command execution, screenshots and keyboard input, snapshots, clones, archives, host networking, shared folders, devices, troubleshooting, and safe scriptable workflows.
+description: Automate Parallels Desktop for Mac and its Linux or Windows virtual machines with prlctl and prlsrvctl. Use for VM discovery, lifecycle and configuration, guest command execution, screenshots and keyboard input, snapshots, clones, archives, host networking, shared folders, devices, Retina and HiDPI display scaling, troubleshooting, and safe scriptable workflows.
 ---
 
 # Parallels CLI
@@ -92,6 +92,8 @@ prlctl set shared_folders --help
 
 Most settings use `prlctl set "$VM" <options>`. Some hardware changes require a stopped VM. Capture before/after `prlctl list --info "$VM"` output and do not assume settings are hot-pluggable. See [references/configuration-devices.md](references/configuration-devices.md).
 
+For sharp GNOME text on a Retina Mac, combine the Parallels high-resolution framebuffer with integer 200% guest scaling. Read [references/linux-retina-scaling.md](references/linux-retina-scaling.md) before changing video or GNOME display settings.
+
 ### Operate inside a guest
 
 Use Parallels Tools-backed execution for shell or PowerShell work:
@@ -148,6 +150,7 @@ Read [references/safety.md](references/safety.md) before recovery, deletion, mig
 - Snapshots, clones, archives, and backups: [references/snapshots-clones-backups.md](references/snapshots-clones-backups.md)
 - Desktop-wide networks and USB assignments: [references/host-networking.md](references/host-networking.md)
 - Linux recipes: [references/linux-examples.md](references/linux-examples.md)
+- Linux GNOME Retina and HiDPI scaling: [references/linux-retina-scaling.md](references/linux-retina-scaling.md)
 - Windows recipes: [references/windows-examples.md](references/windows-examples.md)
 - Risk classification and recovery practices: [references/safety.md](references/safety.md)
 
